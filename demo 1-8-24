@@ -1,0 +1,24 @@
+int main()
+{
+    printf("Hello World\n");
+    clear_motor_position_counter(0);
+    cmpc(2);
+   
+    while(get_motor_position_counter(2)  <14000)
+    {
+        motor(2, 75);
+       
+        if (gmpc(0) < gmpc(2))
+        {
+            motor(0, 100);
+        }
+        else
+        {
+            motor(0,50);
+        }
+    }
+   
+
+   
+    return 0;
+}
